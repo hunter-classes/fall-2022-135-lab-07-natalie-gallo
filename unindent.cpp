@@ -12,7 +12,10 @@ string removeLeadingSpaces(string line);
 //main
 int main()
 {
-  cout << removeLeadingSpaces("       int x = 1;  ") << endl;
+  string s;
+  while (getline(cin,s)){ //reads in line by line each iteration and stores to s
+  cout << removeLeadingSpaces(s) << endl;
+  }
   return 0;
 }
 
@@ -41,3 +44,8 @@ string removeLeadingSpaces(string line){
   }
   return unindent;  
 }
+
+/*
+  For task a, would i do cin >> var1 >> var2 etc
+  or maybe getline would work and then add fixed line to a return var called result?
+*/
