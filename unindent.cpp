@@ -7,7 +7,7 @@
 using namespace std;
 
 //prototype
-string removeLeadingSpaces(string line){
+string removeLeadingSpaces(string line);
 
 //main
 int main()
@@ -24,6 +24,7 @@ string removeLeadingSpaces(string line){
   //return the var string (^substring??)
   string junk;
   string unindent;
+  char c;
   for (int i = 0; i < line.length(); i++){
     c = line[i];
     if (isspace(c)){
@@ -31,5 +32,6 @@ string removeLeadingSpaces(string line){
     } else {
       unindent = unindent + c;
     }
-    return unindent;  
+  }
+  return unindent;  
 }
