@@ -22,16 +22,22 @@ string removeLeadingSpaces(string line){
   //if isspace(int c) == true -> ignore and move to next
   //if isspace(int c) == false -> add c into a string until == true
   //return the var string (^substring??)
-  string junk;
   string unindent;
   char c;
-  for (int i = 0; i < line.length(); i++){
+  bool space = true;
+  int i = 0;
+
+  while (space){
     c = line[i];
     if (isspace(c)){
-      junk = junk + c;
+      space = true;
     } else {
-      unindent = unindent + c;
+      space = false;;
     }
+    i = i + 1;
+  }
+  if (space == false){
+    unindent = line.substr(i-1);
   }
   return unindent;  
 }
