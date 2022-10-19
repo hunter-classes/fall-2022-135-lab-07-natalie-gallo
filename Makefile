@@ -1,20 +1,18 @@
-main: main.o unindent.o indent.o
-	g++ -o main main.o unindent.o indent.o
+main: main.o funcs.o
+	g++ -o main main.o funcs.o
 
-tests: tests.o unindent.o indent.o
-	g++ -o tests tests.o unindent.o indent.o
+tests: tests.o funcs.o
+	g++ -o tests tests.o funcs.o
 
-unindent.o: unindent.cpp unindent.h
+funcs.o: funcs.cpp funcs.h
 
-indent.o: indent.cpp indent.h
+main.o: main.cpp funcs.h
 
-main.o: main.cpp unindent.cpp indent.cpp
-
-tests.o: tests.cpp doctest.h unindent.h indent.h
+tests.o: tests.cpp doctest.h funcs.h
 	g++ -c -std=c++11 tests.cpp
 
 clean:
-	rm -f main.o tests.o unindent.o indent.o
+	rm -f main.o funcs.o tests.o
 
 #implementing doctests? if not remove tests target
 #make sure main is executable, have to change indent and unindent cpp files
