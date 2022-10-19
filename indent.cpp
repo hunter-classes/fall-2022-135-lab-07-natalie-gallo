@@ -16,16 +16,15 @@ int main() {
   int count = 0;
   while (getline(cin, s)) {
     // reads in line by line each iteration and stores to s
-    if (countChar(s, '}') >= 1) {
+    s = removeLeadingSpaces(s);
+    if (s[0] == '}') {
       count = count - 1;
     }
     for (int i = 0; i < count; i++) {
       cout << '\t';
     }
-    s = removeLeadingSpaces(s);
     cout << s << endl;
     count = count + countChar(s, '{');
-    count = count - countChar(s, '}');
   }
   return 0;
 }
