@@ -25,6 +25,9 @@ int main() {
     }
     cout << s << endl;
     count = count + countChar(s, '{');
+    if (s[s.length() - 1] == '}' && countChar(s, '{') >= 1) {
+      count = count - countChar(s, '}');;
+    }
   }
   return 0;
 }
