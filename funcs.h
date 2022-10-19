@@ -1,4 +1,5 @@
 #pragma once
+using namespace std;
 
 // prototype
 int countChar(string line, char c); //task b
