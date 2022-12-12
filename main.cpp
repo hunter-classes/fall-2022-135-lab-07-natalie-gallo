@@ -5,6 +5,8 @@
 #include <sstream>
 
 using namespace std;
+
+//Ish's contribution below:
 string prettify(string input_string);
 
 // main
